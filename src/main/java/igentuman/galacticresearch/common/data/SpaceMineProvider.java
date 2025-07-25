@@ -6,6 +6,7 @@ import igentuman.galacticresearch.network.GRPacketSimple;
 import igentuman.galacticresearch.util.StackUtil;
 import igentuman.galacticresearch.util.Util;
 import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.management.PlayerList;
@@ -211,7 +212,7 @@ public class SpaceMineProvider {
         this.missions.put(name, cnt);
         GalacticResearch.skyModel.addAsteroid(name);
         if(ModConfig.machines.announce_asteroids) {
-            GalacticResearch.server.getPlayerList().sendMessage(new TextComponentString("Asteroid detected on sky"));
+            GalacticResearch.server.getPlayerList().sendMessage(new TextComponentString(I18n.format("message.new_asteroid")));
         }
         hasChanges = true;
         return name + " ("+cnt+")";
